@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | itSMF Zambia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#718bb9",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1a1c1e",
+                    "on-primary-fixed": "#001b3d",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#d6e3ff",
+                    "primary": "#000e24",
+                    "surface-tint": "#455f8a",
+                    "surface-container": "#eeeef0",
+                    "primary-container": "#00234b",
+                    "secondary-container": "#8cf3f3",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-tertiary-container": "#878b8d",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#e0e3e5",
+                    "tertiary": "#0a0e10",
+                    "tertiary-container": "#202426",
+                    "surface-container-high": "#e8e8ea",
+                    "on-secondary-container": "#007070",
+                    "on-primary-fixed-variant": "#2c4771",
+                    "surface-container-low": "#f3f3f6",
+                    "on-surface": "#1a1c1e",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e2e2e5",
+                    "on-tertiary-fixed": "#181c1e",
+                    "secondary-fixed": "#8cf3f3",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface": "#f9f9fc",
+                    "on-secondary-fixed": "#002020",
+                    "surface-variant": "#e2e2e5",
+                    "outline": "#74777f",
+                    "on-tertiary-fixed-variant": "#434749",
+                    "inverse-primary": "#adc7f8",
+                    "surface-bright": "#f9f9fc",
+                    "primary-fixed-dim": "#adc7f8",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "inverse-surface": "#2f3133",
+                    "secondary": "#006a6a",
+                    "on-surface-variant": "#43474e",
+                    "background": "#f9f9fc",
+                    "surface-dim": "#dadadc",
+                    "outline-variant": "#c4c6d0",
+                    "secondary-fixed-dim": "#6fd7d6",
+                    "on-secondary-fixed-variant": "#004f4f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "section-padding": "80px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .zambian-pattern {
+            background-color: transparent;
+            background-image: radial-gradient(#00234b 0.5px, transparent 0.5px), radial-gradient(#00234b 0.5px, #f9f9fc 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.05;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-950 docked full-width top-0 sticky border-b border-slate-200 dark:border-slate-800 shadow-sm z-50 transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#00234B] dark:text-blue-400" style="font-size: 24px;">account_balance</span>
+<span class="text-xl font-black text-[#00234B] dark:text-white tracking-tighter">itSMF Zambia</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Inter'] font-semibold text-base tracking-tight">
+<a class="text-[#00234B] dark:text-blue-400 border-b-2 border-[#00234B] dark:border-blue-400 pb-1" href="#">About Us</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#00234B] dark:hover:text-white transition-colors" href="#">Resources</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#00234B] dark:hover:text-white transition-colors" href="#">Partners</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#00234B] dark:hover:text-white transition-colors" href="#">Member Portal</a>
+</nav>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-opacity-90 transition-all active:scale-95">
+                Join Now
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative bg-primary-container text-on-primary py-24 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 zambian-pattern"></div>
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12 relative z-10">
+<div>
+<h1 class="font-headline-xl text-headline-xl mb-6">Pioneering IT Excellence in the Heart of Zambia.</h1>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-lg mb-8">
+                        itSMF Zambia is the premier professional body dedicated to the advancement of IT Service Management (ITSM) across the nation.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-secondary-container text-on-secondary-fixed font-label-md px-8 py-4 rounded shadow-lg hover:shadow-xl transition-all">Download Charter</button>
+</div>
+</div>
+<div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Modern high-end office meeting room in Lusaka with professionals discussing IT strategy, soft natural light through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKuAiJUN5G5g6ed0tEC0LAw4yCAyJnFvL9uv73rxi4aHEUqp6eCMc21U3iLH3M-bdHFo1l2BgPICWdWWVenb2MsC8feJdfgfVbzDSmSjf0PNFrdN-Ir9QT2-xFOpmeKb5UdWAdkxh_GP_nk20P2ZDebvkfHcUULb_qUy0f53hOHz6Lk9nA0bMZzo3m0O8w7CS5UDM1nCzZosWTG4no2FIJt2JjnS0yi3pl-rw7eGL9onCeG2lgHMlBD5GvbwybrNxp9rSjGWilVM8"/>
+</div>
+</div>
+</section>
+<!-- Our Story Section - Asymmetric Layout -->
+<section class="py-20 max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7">
+<span class="text-secondary font-label-md uppercase tracking-widest block mb-4">Our Story</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">A Legacy of Service Management.</h2>
+<div class="space-y-6 font-body-md text-on-surface-variant">
+<p>Established to bridge the gap between global ITIL standards and the unique challenges of the Zambian digital landscape, itSMF Zambia began as a collective of visionary IT leaders. Our journey started in response to the growing need for a unified voice that promotes best practices, continuous improvement, and professional integrity.</p>
+<p>Today, we stand as the definitive hub for ITSM excellence, fostering a community where professionals can connect, share knowledge, and shape the future of IT services in the region.</p>
+</div>
+</div>
+<div class="lg:col-span-5 grid grid-cols-2 gap-4">
+<div class="pt-12">
+<img class="w-full h-64 object-cover rounded-xl shadow-md" data-alt="Close-up of a firm handshake between two business professionals in a formal Zambian corporate setting, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx_YYii6HT0derB4kFXp5lrrGxrb4iw4SkhxlejZb8aJLok26f54MpoakaGnoVxKxl8AwT6NhadXWIXVSH65z_DKCMpn7aIQ8AFJLu0w9NmI9aJs06BY0VAyDzywh9QPh7UkScaT5c8TKqlezY9ceLDXEu4_t-lcPCxCG3Z22aW8OZsKxzT-mmVvba2m0BzgqN_RW5kIQhkHRe__RVIoCz18j9ckGowNPDC4-tG78CYib0wWeXaumNAFd1MO4-JgmUFxFB7-QGam8"/>
+</div>
+<div>
+<img class="w-full h-64 object-cover rounded-xl shadow-md mt-12" data-alt="Architectural view of a modern commercial building in Lusaka financial district at dusk with glowing windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6gt1H17ZLCXdFeG5a7P6kZJY39sRUIiOOP3im0rPwTl7MzFpkLXsA93BBFouwb1b8QQxl_JKpQBZIWNvhKd3f_PiFEnGOlmf796SVRBFK6o4D3lXnKdizOfl9Pk0yqAMEkxcRw_Nvg6ZraM7i68HmWNiBjHJuGHdYr2c0bj2vlSnxj3wChJ49WnZklwzlmZSPshHw1Q4wjGtxWqzYZ795w6XcMu_sXvQJ_78v5x6ynSC-turnZ0_DPfW2ak3NhPLkdPBnuVLy73c"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision, Mission, and Values - Bento Grid -->
+<section class="py-20 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-16">The Framework of Our Ambition.</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Vision -->
+<div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl">visibility</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Vision</h3>
+<p class="font-body-md text-on-surface-variant">To be the catalyst for the digital transformation of Zambian organizations through world-class service management practices.</p>
+</div>
+<!-- Mission -->
+<div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary text-3xl">rocket_launch</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Mission</h3>
+<p class="font-body-md text-on-surface-variant">Empowering IT professionals through education, networking, and advocacy to deliver exceptional business value.</p>
+</div>
+<!-- Values -->
+<div class="bg-primary-container p-8 rounded-xl shadow-xl flex flex-col items-start relative overflow-hidden group">
+<div class="absolute right-0 top-0 opacity-10 p-4">
+<span class="material-symbols-outlined text-on-primary text-[120px]">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-6 relative z-10">Our Core Values</h3>
+<ul class="space-y-4 font-label-md text-white relative z-10">
+<li class="flex items-center gap-3"><span class="w-2 h-2 bg-secondary rounded-full"></span> INTEGRITY</li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 bg-secondary rounded-full"></span> INNOVATION</li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 bg-secondary rounded-full"></span> COLLABORATION</li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 bg-secondary rounded-full"></span> EXCELLENCE</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Governance Section -->
+<section class="py-20 max-w-7xl mx-auto px-6">
+<div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-1/3 bg-[#00234B] p-12 flex flex-col justify-center">
+<span class="text-teal-400 font-label-md uppercase mb-4 block">Governance</span>
+<h2 class="font-headline-lg text-headline-lg text-white mb-6">Institutional Rigor.</h2>
+<p class="text-slate-300 font-body-md">We operate under a strict governance framework that ensures transparency, accountability, and alignment with global itSMF International guidelines.</p>
+</div>
+<div class="md:w-2/3 p-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">gavel</span>
+<div>
+<h4 class="font-label-md text-primary mb-1">CONSTITUTIONAL ADHERENCE</h4>
+<p class="text-sm text-on-surface-variant">Strict compliance with the registered chapter constitution and Zambian legal statutes.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+<div>
+<h4 class="font-label-md text-primary mb-1">AUDITED TRANSPARENCY</h4>
+<p class="text-sm text-on-surface-variant">Annual financial audits shared with our corporate and individual membership base.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">groups</span>
+<div>
+<h4 class="font-label-md text-primary mb-1">ADVISORY COUNCILS</h4>
+<p class="text-sm text-on-surface-variant">Expert committees specializing in education, ethics, and industry standards.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">public</span>
+<div>
+<h4 class="font-label-md text-primary mb-1">GLOBAL ALIGNMENT</h4>
+<p class="text-sm text-on-surface-variant">Active participation in global ITSM forums to bring international trends home.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Board of Directors Section -->
+<section class="py-20 bg-surface-container-highest">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Board of Directors</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Guided by a distinguished board of seasoned IT leaders and management experts from across the Zambian corporate spectrum.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Board Member 1 -->
+<div class="group">
+<div class="relative h-80 rounded-xl overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a male IT executive in a sharp business suit, confident expression, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYiNBUhcDamalf5GRgvLf3zCb1fsOmtAeAJBi6liR1scPamkqx8j_Zsmp5dH9rda7pTIdA3Jp8zqH6y2xCYhF4YyN-dHJEnXlngOw6VupDDyw-zGNy5UMY-88iOkzvwrPW8N3O9O64xnsCPc0Pt5qKqOTxkeQSpX5j4R1TMR1q4qE-U62qWswtFTMLrYcCDKhXBDG37l165fG8rUkrZ_sxaFEpYUjyRGk9QwgmrSDemREN_i_jMOCaILLFxyMipTWjFzOQnbEF2ME"/>
+<div class="absolute bottom-0 left-0 right-0 bg-[#00234B]/80 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform">
+<p class="text-white text-xs font-label-md">20+ Years in Infrastructure Strategy</p>
+</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary">Dr. Mwamba Chileshe</h4>
+<p class="text-secondary font-label-md">CHAIRMAN OF THE BOARD</p>
+</div>
+<!-- Board Member 2 -->
+<div class="group">
+<div class="relative h-80 rounded-xl overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a female corporate leader in business attire, warm and intelligent expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgLV_QsdLNhKMyD6fJhxrzcQ5ub6xQ8vJeLny1rjU5FqqbvHNPb3msJ08bp0XLEceNmQbXdM1gH2FFQ3kpSN6cxW2Kve8HeTOqGTUvZNznF4-ZvleMNWz5-pO_yr9f54OHAIRomG7tj_q3laJk5IBSFgw9irKHo0a2N6shtNDHxRtrZitkWcsvxP1vqhjeG5e-j43tnU_AvpSM9RasKLDyrf3sYSF0dHZ9pny8ACULNWJyBUmVVaCX76Q298RNQmCo7aG2CNbGGSw"/>
+<div class="absolute bottom-0 left-0 right-0 bg-[#00234B]/80 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform">
+<p class="text-white text-xs font-label-md">Expert in Governance and Cybersecurity</p>
+</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary">Nalukui Mwanawina</h4>
+<p class="text-secondary font-label-md">VICE CHAIRPERSON</p>
+</div>
+<!-- Board Member 3 -->
+<div class="group">
+<div class="relative h-80 rounded-xl overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male IT director in a modern tech office environment, soft focused office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYX28IWpPeMk27mHbg_oP5ufhV0kYT3hIf9VXzjNowNDB9rXJ-6R1s8RlNb4v1Q9BcX5D42YfqwSdsQpryArmxsz_hCrP-rTtXgucdM7LKYQmAvxrijLE98GrOJCNSpKSEh5dohhZWUIiAtVnrqNLl8SyRW4PMfCD392UiiHWrPrVk15SDg3-iKjNvFtn3oN9cfBYe-HCxsTp7KiKKXc0jZYMrS2Gno0GdNLERYzoGEkbYoIeuT5i9SHq5Vi4x7nutg6RH3M_Rkh0"/>
+<div class="absolute bottom-0 left-0 right-0 bg-[#00234B]/80 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform">
+<p class="text-white text-xs font-label-md">Specialist in Agile Service Delivery</p>
+</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary">Kelvin Musonda</h4>
+<p class="text-secondary font-label-md">DIRECTOR OF EDUCATION</p>
+</div>
+<!-- Board Member 4 -->
+<div class="group">
+<div class="relative h-80 rounded-xl overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="Professional business woman smiling in a corporate setting, looking focused and determined" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqtyKA8tpyKUPeDitEdDwgr_PO2lYWpbI5OkU2eFJv-qdnWUD63redZdQvoP3oeO2kk291bWqHtRiOmu89-yRDk_d4RIZ7Hsr7tIDVBQGMiK4C5-xGiwt5jqev3XjjCZtXGK-5czfRHUUQUD8uxx2qjSX8va5p9f4_YsyU7MnS6xUEEt9A_yItXWLTt42t6CPfOIRcwD9PVG_wIe4IFEShHIsbseLc9Xyl0gM8eWb8ZOaZPdMf81hMYpOM-KZ8JDfNTuYJ267wnNc"/>
+<div class="absolute bottom-0 left-0 right-0 bg-[#00234B]/80 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform">
+<p class="text-white text-xs font-label-md">Expert in IT Financial Management</p>
+</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary">Bwalya Phiri</h4>
+<p class="text-secondary font-label-md">TREASURER</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-white">
+<div class="max-w-5xl mx-auto px-6 text-center">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-6">Be Part of the Excellence.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Whether you are an aspiring professional or a corporate giant, itSMF Zambia provides the tools, network, and status to lead in the IT age.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-[#00234B] text-white px-10 py-5 rounded font-label-md hover:bg-slate-900 transition-all">Apply for Membership</button>
+<button class="border-2 border-[#00234B] text-[#00234B] px-10 py-5 rounded font-label-md hover:bg-slate-50 transition-all">Contact Us</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#00234B] dark:bg-slate-950 w-full mt-auto border-t border-white/10 transition-opacity duration-300">
+<div class="w-full py-12 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">
+<div>
+<span class="text-white font-bold text-lg block mb-4">itSMF Zambia</span>
+<p class="font-['Inter'] text-sm leading-relaxed text-slate-300">© 2024 itSMF Zambia. The definitive hub for IT Service Management excellence.</p>
+</div>
+<div class="flex flex-wrap md:justify-end gap-x-8 gap-y-4">
+<a class="font-['Inter'] text-sm text-slate-300 hover:text-white hover:underline decoration-teal-400 underline-offset-4 transition-all" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm text-slate-300 hover:text-white hover:underline decoration-teal-400 underline-offset-4 transition-all" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-sm text-slate-300 hover:text-white hover:underline decoration-teal-400 underline-offset-4 transition-all" href="#">Contact Support</a>
+<a class="font-['Inter'] text-sm text-teal-400 font-medium hover:underline decoration-teal-400 underline-offset-4 transition-all" href="#">Zambian IT Standards</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,6 @@
+@itSMF.Zambia.API_HostAddress = http://localhost:5145
+
+GET {{itSMF.Zambia.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

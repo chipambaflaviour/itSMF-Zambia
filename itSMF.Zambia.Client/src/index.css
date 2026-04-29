@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-zambia-pattern {
+    background-image: theme('backgroundImage.zambia-pattern');
+    background-size: theme('backgroundSize.zambia-pattern');
+    background-position: theme('backgroundPosition.zambia-pattern');
+  }
+}

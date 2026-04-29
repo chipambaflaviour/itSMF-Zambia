@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services &amp; Benchmarking | itSMF Zambia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "outline": "#74777f",
+                        "on-primary-fixed": "#001b3d",
+                        "on-surface": "#1a1c1e",
+                        "surface-container": "#eeeef0",
+                        "on-secondary-fixed": "#002020",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0a0e10",
+                        "surface-container-highest": "#e2e2e5",
+                        "surface-container-high": "#e8e8ea",
+                        "primary-fixed-dim": "#adc7f8",
+                        "on-tertiary-fixed-variant": "#434749",
+                        "on-secondary-container": "#007070",
+                        "secondary-fixed": "#8cf3f3",
+                        "inverse-on-surface": "#f0f0f3",
+                        "secondary-fixed-dim": "#6fd7d6",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#000e24",
+                        "surface": "#f9f9fc",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#455f8a",
+                        "tertiary-container": "#202426",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9fc",
+                        "on-tertiary-fixed": "#181c1e",
+                        "inverse-surface": "#2f3133",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadadc",
+                        "background": "#f9f9fc",
+                        "inverse-primary": "#adc7f8",
+                        "on-background": "#1a1c1e",
+                        "surface-container-low": "#f3f3f6",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#8cf3f3",
+                        "on-primary-container": "#718bb9",
+                        "primary-container": "#00234b",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "secondary": "#006a6a",
+                        "on-surface-variant": "#43474e",
+                        "primary-fixed": "#d6e3ff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#878b8d",
+                        "surface-variant": "#e2e2e5",
+                        "on-primary-fixed-variant": "#2c4771",
+                        "outline-variant": "#c4c6d0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "section-padding": "80px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .geometric-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 106, 106, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .copper-wire-overlay {
+            background-image: linear-gradient(45deg, rgba(0, 106, 106, 0.03) 25%, transparent 25%, transparent 50%, rgba(0, 106, 106, 0.03) 50%, rgba(0, 106, 106, 0.03) 75%, transparent 75%, transparent);
+            background-size: 4px 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background selection:bg-secondary/30">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto h-20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-2xl" data-icon="account_balance">account_balance</span>
+<span class="text-xl font-extrabold text-[#00234B] dark:text-white tracking-tight uppercase font-headline-md">itSMF Zambia</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-medium font-label-md hover:text-teal-600 transition-all duration-200" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium font-label-md hover:text-teal-600 transition-all duration-200" href="#">About</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium font-label-md hover:text-teal-600 transition-all duration-200" href="#">Membership</a>
+<a class="text-[#00234B] dark:text-teal-400 border-b-2 border-secondary pb-1 font-bold font-label-md" href="#">Services</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium font-label-md hover:text-teal-600 transition-all duration-200" href="#">Resources</a>
+</nav>
+<button class="bg-primary-container text-white px-6 py-2 rounded-lg font-label-md active:scale-95 duration-100 transition-all hover:bg-primary">
+                Member Portal
+            </button>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section: ITIL Performance Benchmarking -->
+<section class="relative bg-primary-container overflow-hidden pt-20 pb-32">
+<div class="absolute inset-0 copper-wire-overlay opacity-20"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary text-white text-xs font-bold tracking-widest uppercase">Global Standards</span>
+<h1 class="text-white font-headline-xl text-headline-xl">ITIL Performance Benchmarking Model</h1>
+<p class="text-on-primary-container text-body-lg font-body-lg max-w-xl">
+                            Position your organization against regional and global leaders. Our proprietary benchmarking framework provides data-driven insights to optimize your IT service delivery and maximize business value.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-white px-8 py-4 rounded font-label-md hover:bg-[#004f4f] transition-colors shadow-lg">
+                                START ASSESSMENT
+                            </button>
+<button class="border border-outline-variant text-white px-8 py-4 rounded font-label-md hover:bg-white/10 transition-colors">
+                                DOWNLOAD BROCHURE
+                            </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-secondary/20 blur-3xl group-hover:bg-secondary/30 transition-all duration-500"></div>
+<div class="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-2xl overflow-hidden">
+<img alt="Benchmarking Dashboard" class="rounded shadow-inner opacity-90 group-hover:opacity-100 transition-opacity duration-300" data-alt="high-tech digital dashboard showing complex analytics and data visualization with deep blue and teal accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnPNqwXD1F_gtoJR_aAEeiX-EAYcKKyxQ24Jbubbg3tx98jU0-JJqMLNvGtZDSFmoYg8OL8Xnk0Pu8CMctX5_bSiTSD2-lft3aEJWLO0a5Z1o_N6vLKf35QXj2tAZF6Hnw7QeGVdSY2SAevFu4Odtnw-cycLz6AgcD-mKNigkzjKk0PiYB27EtrbW--9zIsor45I5ZEKdAVKP9hL6uQgilYLRlTUs_BA4Top29oKFU-wf7LoyMG9DTDIudUnJsEgVIKhbeQdHdrE8"/>
+<div class="mt-6 grid grid-cols-3 gap-4 text-center">
+<div class="p-4 bg-white/10 rounded border border-white/5">
+<div class="text-secondary font-bold text-headline-md">150+</div>
+<div class="text-white/60 text-[10px] uppercase tracking-tighter">KPIs Tracked</div>
+</div>
+<div class="p-4 bg-white/10 rounded border border-white/5">
+<div class="text-secondary font-bold text-headline-md">24/7</div>
+<div class="text-white/60 text-[10px] uppercase tracking-tighter">Real-time Data</div>
+</div>
+<div class="p-4 bg-white/10 rounded border border-white/5">
+<div class="text-secondary font-bold text-headline-md">Zambia</div>
+<div class="text-white/60 text-[10px] uppercase tracking-tighter">Regional Context</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works: Bento Grid -->
+<section class="py-section-padding bg-surface geometric-pattern">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-primary">Strategic Framework</h2>
+<p class="text-outline max-w-2xl mx-auto">Our 4-step maturity assessment helps you bridge the gap between IT operations and strategic business objectives.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<div class="md:col-span-4 bg-white border border-slate-100 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="data_exploration">data_exploration</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">01. Data Ingestion</h3>
+<p class="text-on-surface-variant text-body-md">Automated and manual gathering of your current service metrics, ticket volume, and resolution speeds.</p>
+</div>
+</div>
+<div class="md:col-span-8 bg-primary-container text-white p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute right-0 bottom-0 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[300px]" data-icon="query_stats">query_stats</span>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="compare_arrows">compare_arrows</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">02. Peer Comparison</h3>
+<p class="text-slate-300 text-body-lg max-w-md">Anonymized comparison against industry verticals in the Zambian market and international ITIL standards.</p>
+</div>
+<div class="mt-8 flex gap-2">
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded text-xs">Healthcare IT</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded text-xs">FinTech</span>
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded text-xs">Public Sector</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-8 bg-white border border-slate-100 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row gap-8 items-center h-full">
+<div class="w-full md:w-1/2">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="insights">insights</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">03. Gap Analysis</h3>
+<p class="text-on-surface-variant text-body-md">Identify specific bottlenecks in your Service Desk, Change Management, and Incident Response protocols.</p>
+</div>
+<div class="w-full md:w-1/2">
+<img alt="Analysis" class="rounded-lg grayscale hover:grayscale-0 transition-all duration-500" data-alt="magnifying glass over complex financial charts and service management data points with sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC4cEjFSYm0sjPfltO9dlluVOEUvJg_8UzJ9141bjO0ASVFQ6Erv9UTuVwcwVLaPvA9WZIVDHbKD00NjcpDtA7yrBFUQQ3g5Z5Eq7t0SNn0EkHwfJghgoRvm3j7Grp8WjRsjPygo68B5npMjoA9-BcmFm-IGpiRQvMSd86kh-X-QdjDg-YzXSGVelbZSjFlu6TobJKDVTANo8YRNuKLkXW1SHhNV0r02jXNqtN3KTDMB7sq4phJi6Ev_aTAbE0vzszWL2ZJmXaJu0"/>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bg-secondary text-white p-8 rounded-xl flex flex-col justify-between group">
+<div class="relative">
+<span class="material-symbols-outlined text-white text-4xl mb-6 group-hover:rotate-12 transition-transform" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md mb-4">04. Roadmap</h3>
+<p class="text-teal-100 text-body-md">A concrete, actionable improvement plan tailored to your organization's unique resource constraints and goals.</p>
+</div>
+<button class="bg-white/10 hover:bg-white/20 border border-white/20 text-white w-full py-3 mt-4 font-label-md transition-colors">
+                            VIEW SAMPLE ROADMAP
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Services Grid -->
+<section class="py-section-padding bg-white relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<div class="flex justify-between items-end mb-12">
+<div class="space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-primary">Global ITSM Services</h2>
+<p class="text-outline">Empowering Zambian IT professionals with world-class resources.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1: Certification -->
+<div class="bg-primary-container text-white p-8 rounded shadow-xl relative overflow-hidden flex flex-col justify-between h-[450px]">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="school">school</span>
+</div>
+<div>
+<div class="bg-secondary text-white px-3 py-1 text-[10px] font-bold uppercase w-fit mb-6 tracking-widest">Education</div>
+<h3 class="font-headline-md text-headline-md mb-4">Certification Pathways</h3>
+<p class="text-slate-400 text-body-md">From ITIL 4 Foundation to Strategic Leader. Access certified trainers and globally recognized accreditation exams right here in Zambia.</p>
+<ul class="mt-6 space-y-3">
+<li class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_circle">check_circle</span>
+                                    Accredited Courseware
+                                </li>
+<li class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_circle">check_circle</span>
+                                    Flexible Exam Schedules
+                                </li>
+</ul>
+</div>
+<button class="mt-8 bg-secondary text-white py-4 font-label-md hover:bg-[#004f4f] transition-all flex items-center justify-center gap-2">
+                            ENROLL NOW
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Service 2: Community Education -->
+<div class="bg-primary-container text-white p-8 rounded shadow-xl relative overflow-hidden flex flex-col justify-between h-[450px]">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="groups">groups</span>
+</div>
+<div>
+<div class="bg-secondary text-white px-3 py-1 text-[10px] font-bold uppercase w-fit mb-6 tracking-widest">Community</div>
+<h3 class="font-headline-md text-headline-md mb-4">Community Education</h3>
+<p class="text-slate-400 text-body-md">Monthly webinars, local masterclasses, and collaborative workshops designed for the modern Zambian enterprise.</p>
+<ul class="mt-6 space-y-3">
+<li class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_circle">check_circle</span>
+                                    Local Case Studies
+                                </li>
+<li class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_circle">check_circle</span>
+                                    Networking Opportunities
+                                </li>
+</ul>
+</div>
+<button class="mt-8 bg-secondary text-white py-4 font-label-md hover:bg-[#004f4f] transition-all flex items-center justify-center gap-2">
+                            VIEW CALENDAR
+                            <span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+</button>
+</div>
+<!-- Service 3: Mentorship -->
+<div class="bg-primary-container text-white p-8 rounded shadow-xl relative overflow-hidden flex flex-col justify-between h-[450px]">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="psychology">psychology</span>
+</div>
+<div>
+<div class="bg-secondary text-white px-3 py-1 text-[10px] font-bold uppercase w-fit mb-6 tracking-widest">Professional</div>
+<h3 class="font-headline-md text-headline-md mb-4">Mentorship Programme</h3>
+<p class="text-slate-400 text-body-md">Bridge the gap between theory and practice. Connect with seasoned ITSM leaders for one-on-one professional guidance.</p>
+<ul class="mt-6 space-y-3">
+<li class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_circle">check_circle</span>
+                                    Direct Leader Access
+                                </li>
+<li class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_circle">check_circle</span>
+                                    Career Path Mapping
+                                </li>
+</ul>
+</div>
+<button class="mt-8 bg-secondary text-white py-4 font-label-md hover:bg-[#004f4f] transition-all flex items-center justify-center gap-2">
+                            BECOME A MENTEE
+                            <span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-24 bg-surface-container-low border-y border-slate-200">
+<div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-primary">Ready to Optimize Your IT Value?</h2>
+<p class="text-body-lg text-outline">Join the leading community of IT professionals in Zambia and transform your service management capabilities.</p>
+<div class="pt-4">
+<button class="bg-primary text-white px-12 py-5 rounded font-label-md hover:bg-primary-container transition-all shadow-xl active:scale-95">
+                        REGISTER FOR A SERVICE NOW
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#00234B] text-white py-12 px-6 md:px-16 border-t border-slate-700">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 font-['Inter'] text-sm">
+<div class="space-y-4">
+<div class="text-lg font-bold text-white mb-4">itSMF Zambia</div>
+<p class="text-slate-300 leading-relaxed">The definitive hub for ITSM excellence in the region. Empowering organizations and professionals through global standards and local expertise.</p>
+<div class="flex gap-4 pt-4">
+<span class="material-symbols-outlined text-teal-400 cursor-pointer hover:text-white" data-icon="linkedin">link</span>
+<span class="material-symbols-outlined text-teal-400 cursor-pointer hover:text-white" data-icon="facebook">social_leaderboard</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="font-bold text-white mb-4 uppercase tracking-widest text-xs">Quick Links</div>
+<nav class="flex flex-col gap-3">
+<a class="text-slate-300 hover:text-teal-300 transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-300 hover:text-teal-300 transition-all" href="#">Terms of Service</a>
+<a class="text-slate-300 hover:text-teal-300 transition-all" href="#">Contact Us</a>
+<a class="text-teal-400 font-semibold" href="#">Service Directory</a>
+</nav>
+</div>
+<div class="space-y-4">
+<div class="font-bold text-white mb-4 uppercase tracking-widest text-xs">Contact</div>
+<p class="text-slate-300">Plot 10, Longacres, Lusaka, Zambia</p>
+<p class="text-slate-300">membership@itsmfzambia.org</p>
+<p class="text-slate-300">+260 971 000 000</p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-700 text-center text-slate-500 text-xs">
+            © 2024 itSMF Zambia. The definitive hub for ITSM excellence.
+        </div>
+</footer>
+</body></html>
