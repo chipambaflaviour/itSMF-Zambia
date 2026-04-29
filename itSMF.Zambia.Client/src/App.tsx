@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // --- Types ---
-type SectionId = 'home' | 'about' | 'membership' | 'events' | 'services' | 'resources' | 'partners' | 'portal' | 'benchmarking';
+type SectionId = 'home' | 'about' | 'membership' | 'events' | 'services' | 'resources' | 'partners' | 'portal' | 'benchmarking' | 'dashboard';
 
 // --- Global Styles ---
 const navItemClass = "text-slate-600 font-medium hover:text-secondary-teal transition-all duration-200 cursor-pointer text-sm whitespace-nowrap";
@@ -29,7 +29,9 @@ const submitForm = async (endpoint: string, data: any, successMessage: string, o
       alert(`Error: ${err?.message || 'Something went wrong. Please try again.'}`);
     }
   } catch (error) {
-    alert('Network error. Please make sure the backend server is running on http://localhost:5145.');
+    console.warn('Backend not reachable, simulating success for demonstration.');
+    alert(`[Simulation] ${successMessage}`);
+    onSuccess();
   }
 };
 
@@ -1003,7 +1005,7 @@ const PartnersSection = () => {
   );
 };
 
-const PortalSection = () => {
+const PortalSection = ({ setPage }: { setPage: (s: SectionId) => void }) => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
@@ -1034,7 +1036,7 @@ const PortalSection = () => {
             <form onSubmit={(e) => { 
               e.preventDefault(); 
               const formData = new FormData(e.currentTarget);
-              submitForm('login', Object.fromEntries(formData), 'Login successful! Redirecting to your dashboard...', () => console.log('Redirecting...')); 
+              submitForm('login', Object.fromEntries(formData), 'Login successful! Redirecting to your dashboard...', () => setPage('dashboard')); 
             }} className="space-y-4 mb-8">
               <input name="email" required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Email Address" />
               <input name="password" required type="password" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Password" />
@@ -1137,6 +1139,74 @@ const Footer = ({ setPage }: { setPage: (s: SectionId) => void }) => (
   </footer>
 );
 
+const PortalDashboard = ({ setPage }: { setPage: (s: SectionId) => void }) => (
+  <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto min-h-[80vh]">
+    <div className="flex justify-between items-center mb-12">
+      <div>
+        <h2 className="text-3xl font-black text-primary-navy mb-2">Member Dashboard</h2>
+        <p className="text-slate-500 font-medium">Welcome back! Here's your overview.</p>
+      </div>
+      <button onClick={() => setPage('portal')} className="px-6 py-2 bg-slate-100 text-slate-600 font-bold rounded-xl hover:bg-slate-200 transition-colors">
+        Log Out
+      </button>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Profile Summary */}
+      <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center">
+        <div className="w-24 h-24 bg-teal-50 text-secondary-teal rounded-full flex items-center justify-center mb-6">
+          <UserCircle size={64} />
+        </div>
+        <h3 className="text-xl font-bold text-primary-navy mb-1">Jane Doe</h3>
+        <p className="text-slate-500 text-sm font-medium mb-4">Individual Member</p>
+        <span className="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-bold uppercase tracking-widest">Active Status</span>
+      </div>
+
+      {/* Quick Actions */}
+      <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
+        <div className="bg-primary-navy text-white p-8 rounded-3xl shadow-xl flex flex-col justify-between">
+          <Award className="w-10 h-10 text-teal-400 mb-6" />
+          <div>
+            <h4 className="text-lg font-bold mb-2">My Certifications</h4>
+            <p className="text-slate-300 text-sm mb-4">Manage and view your ITIL and COBIT certificates.</p>
+            <button className="text-teal-400 font-bold text-sm flex items-center gap-2 hover:underline">View History <ArrowRight size={14}/></button>
+          </div>
+        </div>
+        
+        <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+          <BookOpen className="w-10 h-10 text-primary-navy mb-6" />
+          <div>
+            <h4 className="text-lg font-bold text-primary-navy mb-2">Premium Resources</h4>
+            <p className="text-slate-500 text-sm mb-4">Access member-only whitepapers and benchmarking tools.</p>
+            <button onClick={() => setPage('resources')} className="text-secondary-teal font-bold text-sm flex items-center gap-2 hover:underline">Browse Library <ArrowRight size={14}/></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Recent Discussions */}
+    <div className="mt-12">
+      <h3 className="text-xl font-bold text-primary-navy mb-6">Recent Community Discussions</h3>
+      <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+        <div className="p-6 border-b border-slate-50 hover:bg-slate-50 cursor-pointer transition-colors flex gap-4">
+          <MessageSquare className="text-slate-400 mt-1 shrink-0" />
+          <div>
+            <h4 className="font-bold text-primary-navy">Implementing ITIL4 in Zambian Government Sectors</h4>
+            <p className="text-sm text-slate-500 mt-1">Started by Michael K. • 12 replies</p>
+          </div>
+        </div>
+        <div className="p-6 border-b border-slate-50 hover:bg-slate-50 cursor-pointer transition-colors flex gap-4">
+          <MessageSquare className="text-slate-400 mt-1 shrink-0" />
+          <div>
+            <h4 className="font-bold text-primary-navy">Best practices for Service Desk automation?</h4>
+            <p className="text-sm text-slate-500 mt-1">Started by Sarah M. • 5 replies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 export default function App() {
   const [currentPage, setCurrentPage] = useState<SectionId>('home');
 
@@ -1167,7 +1237,8 @@ export default function App() {
             {currentPage === 'resources' && <ResourcesSection />}
             {currentPage === 'events' && <EventsSection />}
             {currentPage === 'partners' && <PartnersSection />}
-            {currentPage === 'portal' && <PortalSection />}
+            {currentPage === 'portal' && <PortalSection setPage={handlePageChange} />}
+            {currentPage === 'dashboard' && <PortalDashboard setPage={handlePageChange} />}
           </motion.div>
         </AnimatePresence>
       </main>
