@@ -14,6 +14,25 @@ type SectionId = 'home' | 'about' | 'membership' | 'events' | 'services' | 'reso
 const navItemClass = "text-slate-600 font-medium hover:text-secondary-teal transition-all duration-200 cursor-pointer text-sm whitespace-nowrap";
 const activeNavItemClass = "text-primary-navy border-b-2 border-secondary-teal pb-1 font-bold text-sm whitespace-nowrap";
 
+const submitForm = async (endpoint: string, data: any, successMessage: string, onSuccess: () => void) => {
+  try {
+    const res = await fetch(`http://localhost:5145/api/forms/${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      alert(successMessage);
+      onSuccess();
+    } else {
+      const err = await res.json();
+      alert(`Error: ${err?.message || 'Something went wrong. Please try again.'}`);
+    }
+  } catch (error) {
+    alert('Network error. Please make sure the backend server is running on http://localhost:5145.');
+  }
+};
+
 // --- Components ---
 
 const Navbar = ({ current, setPage }: { current: SectionId, setPage: (s: SectionId) => void }) => {
@@ -438,28 +457,32 @@ const MembershipSection = () => {
               </button>
             </div>
             
-            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert('Application submitted successfully! Our team will contact you shortly to complete the onboarding process.'); setShowForm(false); }}>
+            <form className="space-y-6" onSubmit={(e) => { 
+              e.preventDefault(); 
+              const formData = new FormData(e.currentTarget);
+              submitForm('membership', { ...Object.fromEntries(formData), selectedPlan }, 'Application submitted successfully! Our team will contact you shortly to complete the onboarding process.', () => setShowForm(false));
+            }}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">First Name</label>
-                  <input required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
+                  <input name="firstName" required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">Last Name</label>
-                  <input required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
+                  <input name="lastName" required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
-                <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
+                <input name="email" required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
               </div>
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Organization / University</label>
-                <input className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Where do you work/study?" />
+                <input name="organization" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Where do you work/study?" />
               </div>
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Additional Information</label>
-                <textarea className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all min-h-[120px] resize-none" placeholder="Any specific questions or details?"></textarea>
+                <textarea name="additionalInfo" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all min-h-[120px] resize-none" placeholder="Any specific questions or details?"></textarea>
               </div>
               <button type="submit" className="w-full bg-secondary-teal py-5 rounded-2xl text-white font-black uppercase tracking-widest text-sm hover:brightness-110 shadow-xl active:scale-95 transition-all mt-4">
                 Submit Application
@@ -583,10 +606,14 @@ const BenchmarkingLanding = () => (
           <div id="register-org" className="bg-primary-navy text-white p-10 rounded-[3rem] sticky top-32 scroll-mt-32">
             <h4 className="text-2xl font-black mb-4">Sign Up / Register</h4>
             <p className="text-slate-400 mb-8 font-medium">Ready to evaluate your IT Service Management maturity? Fill out the form below to initiate the process.</p>
-            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert('Your organization has been successfully registered for the Benchmarking program! Our team will reach out to you with the initial assessment tools.'); e.currentTarget.reset(); }}>
-              <input required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400 transition-colors" placeholder="Organization Name" />
-              <input required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400 transition-colors" placeholder="Contact Person" />
-              <input required type="email" className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400 transition-colors" placeholder="Work Email" />
+            <form className="space-y-4" onSubmit={(e) => { 
+              e.preventDefault(); 
+              const formData = new FormData(e.currentTarget);
+              submitForm('benchmarking', Object.fromEntries(formData), 'Your organization has been successfully registered for the Benchmarking program! Our team will reach out to you with the initial assessment tools.', () => e.currentTarget.reset());
+            }}>
+              <input name="organizationName" required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400 transition-colors" placeholder="Organization Name" />
+              <input name="contactPerson" required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400 transition-colors" placeholder="Contact Person" />
+              <input name="workEmail" required type="email" className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400 transition-colors" placeholder="Work Email" />
               <button type="submit" className="w-full bg-secondary-teal py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:brightness-110 shadow-2xl active:scale-95 transition-all">
                 Submit Registration
               </button>
@@ -711,30 +738,35 @@ const EventsSection = () => {
             </button>
           </div>
           
-          <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert('Success! You will receive an email confirmation shortly.'); setActiveForm(null); }}>
+          <form className="space-y-6" onSubmit={(e) => { 
+            e.preventDefault(); 
+            const formData = new FormData(e.currentTarget);
+            const endpoint = activeForm.type === 'Speaker Proposal' ? 'speaker-proposal' : 'event-registration';
+            submitForm(endpoint, { ...Object.fromEntries(formData), eventTitle: activeForm.title }, 'Success! You will receive an email confirmation shortly.', () => setActiveForm(null));
+          }}>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">First Name</label>
-                <input required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
+                <input name="firstName" required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
               </div>
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Last Name</label>
-                <input required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
+                <input name="lastName" required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
               </div>
             </div>
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
-              <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
+              <input name="email" required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
             </div>
             {activeForm.type === 'Speaker Proposal' && (
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Presentation Topic</label>
-                <input required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
+                <input name="presentationTopic" required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" />
               </div>
             )}
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-2">{activeForm.type === 'Speaker Proposal' ? 'Abstract / Details' : 'Additional Requirements (Dietary, Accessibility, etc)'}</label>
-              <textarea className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all min-h-[120px] resize-none"></textarea>
+              <textarea name={activeForm.type === 'Speaker Proposal' ? 'abstract' : 'additionalRequirements'} className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all min-h-[120px] resize-none"></textarea>
             </div>
             <button type="submit" className="w-full bg-secondary-teal py-5 rounded-2xl text-white font-black uppercase tracking-widest text-sm hover:brightness-110 shadow-xl active:scale-95 transition-all mt-4">
               Submit
@@ -938,15 +970,19 @@ const PartnersSection = () => {
         </div>
         <div className="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-[3rem]">
           <h3 className="text-2xl font-bold mb-6">Partnership Application</h3>
-          <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert('Partnership Application submitted successfully! Our partner relations team will be in touch with you shortly.'); e.currentTarget.reset(); }}>
+          <form className="space-y-4" onSubmit={(e) => { 
+            e.preventDefault(); 
+            const formData = new FormData(e.currentTarget);
+            submitForm('partnership', Object.fromEntries(formData), 'Partnership Application submitted successfully! Our partner relations team will be in touch with you shortly.', () => e.currentTarget.reset());
+          }}>
             <div className="grid sm:grid-cols-2 gap-4">
-              <input required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400" placeholder="First Name" />
-              <input required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400" placeholder="Last Name" />
+              <input name="firstName" required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400" placeholder="First Name" />
+              <input name="lastName" required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400" placeholder="Last Name" />
             </div>
-            <input required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400" placeholder="Organization Name" />
-            <input required type="email" className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400" placeholder="Work Email" />
+            <input name="organizationName" required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400" placeholder="Organization Name" />
+            <input name="workEmail" required type="email" className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400" placeholder="Work Email" />
             <div className="relative">
-              <select required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white font-bold focus:outline-none focus:border-teal-400 appearance-none cursor-pointer">
+              <select name="partnershipTier" required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white font-bold focus:outline-none focus:border-teal-400 appearance-none cursor-pointer">
                 <option value="" className="text-slate-800">Select Partnership Tier...</option>
                 <option value="ato" className="text-slate-800">Accredited Training Organization (ATO)</option>
                 <option value="corporate" className="text-slate-800">Corporate Sponsor</option>
@@ -954,7 +990,7 @@ const PartnersSection = () => {
               </select>
               <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={20} />
             </div>
-            <textarea required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400 min-h-[120px] resize-none" placeholder="Tell us about your strategic goals..."></textarea>
+            <textarea name="strategicGoals" required className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white placeholder-slate-400 font-bold focus:outline-none focus:border-teal-400 min-h-[120px] resize-none" placeholder="Tell us about your strategic goals..."></textarea>
             <button type="submit" className="w-full bg-secondary-teal py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:brightness-110 shadow-2xl active:scale-95 transition-all mt-4">
               Submit Application
             </button>
@@ -995,9 +1031,13 @@ const PortalSection = () => {
             <h2 className="text-3xl font-black text-primary-navy mb-4">Member Access</h2>
             <p className="text-slate-500 font-medium mb-10 leading-relaxed">Securely access exclusive resources, professional discussion boards, and your certification history.</p>
             
-            <form onSubmit={(e) => { e.preventDefault(); alert('Login successful! Redirecting to your dashboard...'); }} className="space-y-4 mb-8">
-              <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Email Address" />
-              <input required type="password" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Password" />
+            <form onSubmit={(e) => { 
+              e.preventDefault(); 
+              const formData = new FormData(e.currentTarget);
+              submitForm('login', Object.fromEntries(formData), 'Login successful! Redirecting to your dashboard...', () => console.log('Redirecting...')); 
+            }} className="space-y-4 mb-8">
+              <input name="email" required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Email Address" />
+              <input name="password" required type="password" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Password" />
               <button type="submit" className="w-full bg-primary-navy py-5 rounded-2xl text-white font-black uppercase tracking-widest text-sm hover:shadow-2xl transition-all mt-2">
                 Sign In
               </button>
@@ -1013,10 +1053,14 @@ const PortalSection = () => {
             <h2 className="text-3xl font-black text-primary-navy mb-4">Create Account</h2>
             <p className="text-slate-500 font-medium mb-10 leading-relaxed">Join the network to access premium ITSM resources and member benefits.</p>
             
-            <form onSubmit={(e) => { e.preventDefault(); alert('Registration successful! Please check your email to verify your account.'); setIsLogin(true); }} className="space-y-4 mb-8">
-              <input required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Full Name" />
-              <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Email Address" />
-              <input required type="password" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Create Password" />
+            <form onSubmit={(e) => { 
+              e.preventDefault(); 
+              const formData = new FormData(e.currentTarget);
+              submitForm('register', Object.fromEntries(formData), 'Registration successful! Please check your email to verify your account.', () => setIsLogin(true)); 
+            }} className="space-y-4 mb-8">
+              <input name="fullName" required className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Full Name" />
+              <input name="email" required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Email Address" />
+              <input name="password" required type="password" className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 font-bold text-primary-navy focus:outline-none focus:border-secondary-teal focus:bg-white transition-all" placeholder="Create Password" />
               <button type="submit" className="w-full bg-secondary-teal py-5 rounded-2xl text-white font-black uppercase tracking-widest text-sm hover:shadow-2xl active:scale-95 transition-all mt-2">
                 Register
               </button>

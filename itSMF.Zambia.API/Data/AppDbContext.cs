@@ -13,6 +13,14 @@ namespace itSMF.Zambia.API.Data
         public DbSet<Partner> Partners { get; set; }
         public DbSet<Resource> Resources { get; set; }
 
+        // Form Submissions
+        public DbSet<MembershipApplication> MembershipApplications { get; set; }
+        public DbSet<BenchmarkingRegistration> BenchmarkingRegistrations { get; set; }
+        public DbSet<PartnershipApplication> PartnershipApplications { get; set; }
+        public DbSet<SpeakerProposal> SpeakerProposals { get; set; }
+        public DbSet<EventRegistration> EventRegistrations { get; set; }
+        public DbSet<PortalUser> PortalUsers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
