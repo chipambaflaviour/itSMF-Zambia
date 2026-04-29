@@ -1157,7 +1157,7 @@ const PortalDashboard = ({ setPage }: { setPage: (s: SectionId) => void }) => (
         <div className="w-24 h-24 bg-teal-50 text-secondary-teal rounded-full flex items-center justify-center mb-6">
           <UserCircle size={64} />
         </div>
-        <h3 className="text-xl font-bold text-primary-navy mb-1">Jane Doe</h3>
+        <h3 className="text-xl font-bold text-primary-navy mb-1">ITSM Professional</h3>
         <p className="text-slate-500 text-sm font-medium mb-4">Individual Member</p>
         <span className="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-bold uppercase tracking-widest">Active Status</span>
       </div>
