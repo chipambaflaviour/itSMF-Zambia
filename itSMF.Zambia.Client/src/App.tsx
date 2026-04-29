@@ -61,7 +61,7 @@ const Navbar = ({ current, setPage }: { current: SectionId, setPage: (s: Section
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-white py-5'}`}>
       <div className="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => setPage('home')}>
-          <img src="/logo.png" alt="itSMF Zambia Logo" className="h-12 w-auto object-contain" />
+          <img src="/logo_v2.png" alt="itSMF Zambia Logo" className="h-12 w-auto object-contain" />
         </div>
         
         <nav className="hidden xl:flex items-center gap-6">
